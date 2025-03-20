@@ -1,12 +1,11 @@
-﻿using DesignPatterns.Factory.Services;
-
-// Injeccion de dependencia: Factory
-var packageService = new PackageService();
+﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Factory;
 
 while (true)
 {
     Console.WriteLine("Select a design pattern:");
     Console.WriteLine("1 - Factory Method");
+    Console.WriteLine("2 - Abstract Method");
     Console.WriteLine("0 - Exit");
 
     if (int.TryParse(Console.ReadLine(), out int patternChoice))
@@ -14,7 +13,10 @@ while (true)
         switch (patternChoice)
         {
             case 1:
-                packageService.RunFactoryMethod();
+                FactoryMethodExecutor.Run();
+                break;
+            case 2:
+                AbstractFactoryMethodExecutor.Run(); 
                 break;
             case 0:
                 return;

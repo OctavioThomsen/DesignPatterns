@@ -1,11 +1,11 @@
-﻿using DesignPatterns.Factory.Interfaces;
-using DesignPatterns.Factory.Models;
+﻿using DesignPatterns.Factory.Entities;
+using DesignPatterns.Factory.Interfaces;
 
 namespace DesignPatterns.Factory.Factories
 {
-    public class ExpressPackageFactory : PackageFactory
+    public class ExpressPackageFactory : IPackageFactory
     {
-        public override IPackage CreatePackage()
+        public IPackage CreatePackage()
         {
             return new ExpressPackage();
         }

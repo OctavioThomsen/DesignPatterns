@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Factory.Interfaces;
 
-namespace DesignPatterns.Factory.Models
+namespace DesignPatterns.Factory.Entities
 {
     public class ExpressPackage : IPackage
     {

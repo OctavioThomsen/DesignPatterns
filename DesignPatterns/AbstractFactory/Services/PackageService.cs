@@ -1,7 +1,7 @@
-﻿using DesignPatterns.Factory.Entities;
-using DesignPatterns.Factory.Interfaces;
+﻿using DesignPatterns.AbstractFactory.Entities;
+using DesignPatterns.AbstractFactory.Interfaces;
 
-namespace DesignPatterns.Factory.Services
+namespace DesignPatterns.AbstractFactory.Services
 {
     public class PackageService
     {
@@ -18,7 +18,7 @@ namespace DesignPatterns.Factory.Services
             package.Deliver();
         }
 
-        public IPackage GetPackage()
+        public APackage GetPackage()
         {
             return packageFactory.CreatePackage();
         }
