@@ -8,24 +8,24 @@ namespace DesignPatterns.Factory
     {
         public static void Run()
         {
-            Console.WriteLine("Select a package type:");
-            Console.WriteLine("1 - Standard Package");
-            Console.WriteLine("2 - Express Package");
+            Console.WriteLine("Select a logistic type:");
+            Console.WriteLine("1 - Truck");
+            Console.WriteLine("2 - Ship");
 
             if (int.TryParse(Console.ReadLine(), out int choice))
             {
-                IPackageFactory factory;
+                ILogisticsFactory factory;
                 switch (choice)
                 {
                     case 1:
                         {
-                            factory = new StandardPackageFactory();
+                            factory = new TruckFactory();
                             break;
                         }
                     case 2:
                     default:
                         {
-                            factory = new ExpressPackageFactory();
+                            factory = new ShipFactory();
                             break;
                         }
                 }

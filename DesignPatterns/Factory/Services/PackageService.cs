@@ -5,22 +5,22 @@ namespace DesignPatterns.Factory.Services
 {
     public class PackageService
     {
-        private IPackageFactory packageFactory;
+        private ILogisticsFactory packageFactory;
 
-        public PackageService(IPackageFactory factory)
+        public PackageService(ILogisticsFactory factory)
         {
             packageFactory = factory;
         }
 
         public void RunFactoryMethod()
         {
-            IPackage package = GetPackage();
+            ITransport package = GetPackage();
             package.Deliver();
         }
 
-        public IPackage GetPackage()
+        public ITransport GetPackage()
         {
-            return packageFactory.CreatePackage();
+            return packageFactory.CreateTransport();
         }
     }
 }

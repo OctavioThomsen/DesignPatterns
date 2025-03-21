@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Factory.Interfaces
 {
-    public interface IPackage
+    public interface ITransport
     {
         void Deliver();
     }

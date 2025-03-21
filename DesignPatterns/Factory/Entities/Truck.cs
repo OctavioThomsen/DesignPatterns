@@ -2,11 +2,11 @@
 
 namespace DesignPatterns.Factory.Entities
 {
-    public class ExpressPackage : IPackage
+    public class Truck : ITransport
     {
         public void Deliver()
         {
-            Console.WriteLine("Delivering a express package.");
+            Console.WriteLine("Delivering by truck.");
         }
     }
 }

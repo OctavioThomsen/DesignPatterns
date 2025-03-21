@@ -3,11 +3,11 @@ using DesignPatterns.Factory.Interfaces;
 
 namespace DesignPatterns.Factory.Factories
 {
-    public class StandardPackageFactory : IPackageFactory
+    public class ShipFactory : ILogisticsFactory
     {
-        public IPackage CreatePackage()
+        public ITransport CreateTransport()
         {
-            return new StandardPackage();
+            return new Ship();
         }
     }
 }
