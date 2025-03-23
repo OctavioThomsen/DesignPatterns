@@ -30,8 +30,8 @@ namespace DesignPatterns.Factory
                         }
                 }
 
-                var packageService = new PackageService(factory);
-                packageService.RunFactoryMethod();
+                var logisticsService = new LogisticsService(factory);
+                logisticsService.RunFactoryMethod();
             }
             else
             {

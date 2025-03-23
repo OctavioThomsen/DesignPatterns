@@ -3,13 +3,13 @@ using DesignPatterns.Factory.Interfaces;
 
 namespace DesignPatterns.Factory.Services
 {
-    public class PackageService
+    public class LogisticsService
     {
-        private ILogisticsFactory packageFactory;
+        private ILogisticsFactory logisticsFactory;
 
-        public PackageService(ILogisticsFactory factory)
+        public LogisticsService(ILogisticsFactory factory)
         {
-            packageFactory = factory;
+            logisticsFactory = factory;
         }
 
         public void RunFactoryMethod()
@@ -20,7 +20,7 @@ namespace DesignPatterns.Factory.Services
 
         public ITransport GetPackage()
         {
-            return packageFactory.CreateTransport();
+            return logisticsFactory.CreateTransport();
         }
     }
 }
