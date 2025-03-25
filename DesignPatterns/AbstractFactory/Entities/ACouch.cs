@@ -45,8 +45,7 @@ namespace DesignPatterns.AbstractFactory.Entities
 
         public virtual void SitOn()
         {
-            Console.WriteLine("You sit on the couch.");
-            Console.WriteLine();
+            Console.WriteLine($"You sit on the {typeOfFurniture}.");
         }
     }
 }
