@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Builder;
 using DesignPatterns.Factory;
 
 while (true)
@@ -6,6 +7,7 @@ while (true)
     Console.WriteLine("Select a design pattern:");
     Console.WriteLine("1 - Factory Method");
     Console.WriteLine("2 - Abstract Method");
+    Console.WriteLine("3 - Builder Method");
     Console.WriteLine("0 - Exit");
 
     if (int.TryParse(Console.ReadLine(), out int patternChoice))
@@ -17,6 +19,9 @@ while (true)
                 break;
             case 2:
                 AbstractFactoryMethodExecutor.Run(); 
+                break;
+            case 3:
+                BuilderMethodExecutor.Run();
                 break;
             case 0:
                 return;
