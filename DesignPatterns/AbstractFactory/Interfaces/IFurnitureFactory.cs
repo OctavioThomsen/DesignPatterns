@@ -1,11 +1,11 @@
 ﻿namespace DesignPatterns.AbstractFactory.Interfaces
 {
-    public interface IFurnitureFactory
+    internal interface IFurnitureFactory
     {
-        public ICouch CreateCouch();
+        ICouch CreateCouch();
 
-        public IChair CreateChair();
+        IChair CreateChair();
 
-        public ITable CreateTable();
+        ITable CreateTable();
     }
 }

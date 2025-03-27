@@ -1,17 +1,10 @@
 ﻿using DesignPatterns.AbstractFactory.Interfaces;
-using DesignPatterns.AbstractFactory.Services;
-using DesignPatterns.Factory.Services;
 
 namespace DesignPatterns.AbstractFactory.Entities
 {
-    public class ACouch : ICouch
+    internal abstract class ACouch : ICouch
     {
-        public string typeOfFurniture = "Couch";
-
-        public virtual void LieDown()
-        {
-            Console.WriteLine("You lie down on the couch.");
-        }
+        protected readonly string typeOfFurniture = "couch";
 
         public void DoAnAction()
         {
@@ -41,6 +34,11 @@ namespace DesignPatterns.AbstractFactory.Entities
                         }
                 }
             }
+        }
+
+        public virtual void LieDown()
+        {
+            Console.WriteLine("You lie down on the couch.");
         }
 
         public virtual void SitOn()

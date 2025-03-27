@@ -4,9 +4,9 @@ using DesignPatterns.Factory.Services;
 
 namespace DesignPatterns.Factory
 {
-    public static class FactoryMethodExecutor
+    internal static class FactoryMethodExecutor
     {
-        public static void Run()
+        internal static void Run()
         {
             Console.WriteLine("Select a logistic type:");
             Console.WriteLine("1 - Truck");
@@ -30,7 +30,7 @@ namespace DesignPatterns.Factory
                         }
                 }
 
-                var logisticsService = new LogisticsService(factory);
+                LogisticsService logisticsService = new(factory);
                 logisticsService.RunFactoryMethod();
             }
             else

@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.AbstractFactory.Entities
 {
-    public class ModernTable : ATable
+    internal class ModernTable : ATable
     {
-        public string modelOfFurniture = "Modern";
+        private readonly string modelOfFurniture = "modern";
 
         public override void PlaceOn()
         {

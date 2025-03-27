@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.AbstractFactory.Interfaces
 {
-    public interface IChair : IFurniture
+    internal interface IChair : IFurniture
     {
         void SitOn();
     }

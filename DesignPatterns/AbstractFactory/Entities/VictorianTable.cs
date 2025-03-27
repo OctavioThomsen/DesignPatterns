@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.AbstractFactory.Entities
 {
-    public class VictorianTable : ATable
+    internal class VictorianTable : ATable
     {
-        public string modelOfFurniture = "Victorian";
+        private readonly string modelOfFurniture = "victorian";
 
         public override void PlaceOn()
         {

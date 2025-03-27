@@ -2,9 +2,9 @@
 
 namespace DesignPatterns.AbstractFactory.Entities
 {
-    public abstract class AChair : IChair
+    internal abstract class AChair : IChair
     {
-        public string typeOfFurniture = "Chair";
+        protected readonly string typeOfFurniture = "chair";
 
         public void DoAnAction()
         {

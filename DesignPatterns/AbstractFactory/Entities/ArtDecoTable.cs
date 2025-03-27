@@ -2,7 +2,7 @@
 {
     internal class ArtDecoTable : ATable
     {
-        public string modelOfFurniture = "ArtDeco";
+        private readonly string modelOfFurniture = "artDeco";
 
         public override void PlaceOn()
         {

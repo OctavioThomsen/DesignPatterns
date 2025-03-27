@@ -1,7 +1,7 @@
 ﻿namespace DesignPatterns.Factory.Interfaces
 {
-    public interface ILogisticsFactory
+    internal interface ILogisticsFactory
     {
-        public ITransport CreateTransport();
+        ITransport CreateTransport();
     }
 }

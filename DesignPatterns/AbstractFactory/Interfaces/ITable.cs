@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.AbstractFactory.Interfaces
 {
-    public interface ITable : IFurniture
+    internal interface ITable : IFurniture
     {
         void PlaceOn();
     }

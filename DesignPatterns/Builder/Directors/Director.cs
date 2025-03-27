@@ -1,16 +1,10 @@
-﻿using DesignPatterns.Builder.Entities;
-using DesignPatterns.Builder.Interfaces;
+﻿using DesignPatterns.Builder.Interfaces;
 
 namespace DesignPatterns.Builder.Directors
 {
-    public class Director
+    internal class Director(IHouseBuilder houseBuilder)
     {
-        public IHouseBuilder HouseBuilder { get; set; }
-
-        public Director(IHouseBuilder houseBuilder)
-        {
-            HouseBuilder = houseBuilder;
-        }
+        internal IHouseBuilder HouseBuilder { get; set; } = houseBuilder;
 
         public void MakeStandarHouse()
         {

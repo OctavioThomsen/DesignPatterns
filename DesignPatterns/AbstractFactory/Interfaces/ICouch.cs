@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.AbstractFactory.Interfaces
 {
-    public interface ICouch : IFurniture
+    internal interface ICouch : IFurniture
     {
         void SitOn();
 

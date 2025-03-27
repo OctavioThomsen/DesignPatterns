@@ -1,20 +1,14 @@
-﻿using DesignPatterns.AbstractFactory.Entities;
-using DesignPatterns.AbstractFactory.Interfaces;
+﻿using DesignPatterns.AbstractFactory.Interfaces;
 
 namespace DesignPatterns.AbstractFactory.Services
 {
-    public class FurnitureService
+    public class FurnitureService : IFurnitureService
     {
-        private IFurnitureFactory furnitureFactory;
+        private readonly IFurnitureFactory furnitureFactory;
 
-        public FurnitureService(IFurnitureFactory factory)
+        internal FurnitureService(IFurnitureFactory factory)
         {
             furnitureFactory = factory;
-        }
-
-        public ICouch GetCouch()
-        {
-            return furnitureFactory.CreateCouch();
         }
 
         public IChair GetChair()
@@ -22,6 +16,10 @@ namespace DesignPatterns.AbstractFactory.Services
             return furnitureFactory.CreateChair();
         }
 
+        public ICouch GetCouch()
+        {
+            return furnitureFactory.CreateCouch();
+        }
         public ITable GetTable()
         {
             return furnitureFactory.CreateTable();

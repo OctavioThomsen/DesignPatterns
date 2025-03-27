@@ -1,13 +1,12 @@
 ﻿using DesignPatterns.AbstractFactory.Factories;
-using DesignPatterns.AbstractFactory.Services;
 using DesignPatterns.AbstractFactory.Interfaces;
-using DesignPatterns.AbstractFactory.Entities;
+using DesignPatterns.AbstractFactory.Services;
 
 namespace DesignPatterns.AbstractFactory
 {
-    public static class AbstractFactoryMethodExecutor
+    internal static class AbstractFactoryMethodExecutor
     {
-        public static void Run()
+        internal static void Run()
         {
             Console.WriteLine("Select a model:");
             Console.WriteLine("1 - ArtDeco");
@@ -37,7 +36,7 @@ namespace DesignPatterns.AbstractFactory
                         }
                 }
 
-                var FurnitureService = new FurnitureService(furnitureFactory);
+                FurnitureService FurnitureService = new(furnitureFactory);
 
                 Console.WriteLine("Select a furniture:");
                 Console.WriteLine("1 - Couch");
@@ -46,7 +45,6 @@ namespace DesignPatterns.AbstractFactory
 
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
-
                     IFurniture furniture;
                     switch (choice)
                     {

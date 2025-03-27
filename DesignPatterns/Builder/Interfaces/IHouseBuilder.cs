@@ -2,20 +2,18 @@
 
 namespace DesignPatterns.Builder.Interfaces
 {
-    public interface IHouseBuilder
+    internal interface IHouseBuilder
     {
-        void BuildWalls(int walls);
-
         void BuildDoors(int doors);
-
-        void BuildWindows(int windows);
-
-        void BuildRoof();
 
         void BuildGarage();
 
-        void Reset();
+        void BuildRoof();
 
+        void BuildWalls(int walls);
+        void BuildWindows(int windows);
         AHouse GetResult();
+
+        void Reset();
     }
 }

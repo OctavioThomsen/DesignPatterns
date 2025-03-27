@@ -3,7 +3,7 @@ using DesignPatterns.Factory.Interfaces;
 
 namespace DesignPatterns.Factory.Factories
 {
-    public class TruckFactory : ILogisticsFactory
+    internal class TruckFactory : ILogisticsFactory
     {
         public ITransport CreateTransport()
         {

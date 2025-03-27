@@ -2,11 +2,13 @@
 
 namespace DesignPatterns.Factory.Entities
 {
-    public class Ship : ITransport
+    internal class Ship : ITransport
     {
+        private readonly string typeOfTransport = "ship";
+
         public void Deliver()
         {
-            Console.WriteLine("Delivering by ship.");
+            Console.WriteLine($"Delivering by {typeOfTransport}.");
         }
     }
 }

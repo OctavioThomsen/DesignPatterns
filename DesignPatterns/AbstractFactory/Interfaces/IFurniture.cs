@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.AbstractFactory.Interfaces
 {
-    public interface IFurniture
+    internal interface IFurniture
     {
         void DoAnAction();
     }

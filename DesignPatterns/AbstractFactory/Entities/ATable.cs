@@ -2,9 +2,9 @@
 
 namespace DesignPatterns.AbstractFactory.Entities
 {
-    public class ATable : ITable
+    internal abstract class ATable : ITable
     {
-        public string typeOfFurniture = "Table";
+        protected readonly string typeOfFurniture = "table";
 
         public void DoAnAction()
         {

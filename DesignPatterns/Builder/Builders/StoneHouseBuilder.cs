@@ -3,7 +3,7 @@ using DesignPatterns.Builder.Interfaces;
 
 namespace DesignPatterns.Builder.Builders
 {
-    public class StoneHouseBuilder : IHouseBuilder
+    internal class StoneHouseBuilder : IHouseBuilder
     {
         private StoneHouse House = new("Stone");
 
@@ -32,14 +32,14 @@ namespace DesignPatterns.Builder.Builders
             House.Windows += windows;
         }
 
-        public void Reset()
-        {
-            House = new("Stone");
-        }
-
         public AHouse GetResult()
         {
             return House;
+        }
+
+        public void Reset()
+        {
+            House = new("Stone");
         }
     }
 }

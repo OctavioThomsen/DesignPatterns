@@ -3,18 +3,17 @@ using DesignPatterns.AbstractFactory.Interfaces;
 
 namespace DesignPatterns.AbstractFactory.Factories
 {
-    public class ArtDecoFurnitureFactory : IFurnitureFactory
+    internal class ArtDecoFurnitureFactory : IFurnitureFactory
     {
-        public ICouch CreateCouch()
-        {
-            return new ArtDecoCouch();
-        }
-
         public IChair CreateChair()
         {
             return new ArtDecoChair();
         }
 
+        public ICouch CreateCouch()
+        {
+            return new ArtDecoCouch();
+        }
         public ITable CreateTable()
         {
             return new ArtDecoTable();

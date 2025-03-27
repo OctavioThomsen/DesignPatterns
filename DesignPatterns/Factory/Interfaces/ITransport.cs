@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Factory.Interfaces
 {
-    public interface ITransport
+    internal interface ITransport
     {
         void Deliver();
     }

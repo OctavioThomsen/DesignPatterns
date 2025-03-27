@@ -1,26 +1,25 @@
-﻿using DesignPatterns.Factory.Entities;
-using DesignPatterns.Factory.Interfaces;
+﻿using DesignPatterns.Factory.Interfaces;
 
 namespace DesignPatterns.Factory.Services
 {
-    public class LogisticsService
+    internal class LogisticsService : ILogisticsService
     {
-        private ILogisticsFactory logisticsFactory;
+        private readonly ILogisticsFactory logisticsFactory;
 
-        public LogisticsService(ILogisticsFactory factory)
+        internal LogisticsService(ILogisticsFactory factory)
         {
             logisticsFactory = factory;
+        }
+
+        public ITransport GetPackage()
+        {
+            return logisticsFactory.CreateTransport();
         }
 
         public void RunFactoryMethod()
         {
             ITransport package = GetPackage();
             package.Deliver();
-        }
-
-        public ITransport GetPackage()
-        {
-            return logisticsFactory.CreateTransport();
         }
     }
 }

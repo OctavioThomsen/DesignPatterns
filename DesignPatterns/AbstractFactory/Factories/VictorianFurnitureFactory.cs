@@ -3,18 +3,17 @@ using DesignPatterns.AbstractFactory.Interfaces;
 
 namespace DesignPatterns.AbstractFactory.Factories
 {
-    public class VictorianFurnitureFactory : IFurnitureFactory
+    internal class VictorianFurnitureFactory : IFurnitureFactory
     {
-        public ICouch CreateCouch()
-        {
-            return new VictorianCouch();
-        }
-
         public IChair CreateChair()
         {
             return new VictorianChair();
         }
 
+        public ICouch CreateCouch()
+        {
+            return new VictorianCouch();
+        }
         public ITable CreateTable()
         {
             return new VictorianTable();

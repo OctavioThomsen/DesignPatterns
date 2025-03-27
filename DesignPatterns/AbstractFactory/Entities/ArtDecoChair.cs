@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.AbstractFactory.Entities
 {
-    public class ArtDecoChair : AChair
+    internal class ArtDecoChair : AChair
     {
-        public string modelOfFurniture = "ArtDeco";
+        private readonly string modelOfFurniture = "artDeco";
 
         public override void SitOn()
         {

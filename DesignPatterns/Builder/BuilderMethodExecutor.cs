@@ -4,9 +4,9 @@ using DesignPatterns.Builder.Entities;
 
 namespace DesignPatterns.Builder
 {
-    public class BuilderMethodExecutor
+    internal class BuilderMethodExecutor
     {
-        public static void Run()
+        internal static void Run()
         {
             Console.WriteLine("Select a builder type:");
             Console.WriteLine("1 - Brick");
@@ -38,7 +38,7 @@ namespace DesignPatterns.Builder
 
                 int quantity = 0;
 
-                while (choice != 0) 
+                while (choice != 0)
                 {
                     Console.WriteLine("Select what to build:");
                     Console.WriteLine("1 - Walls");

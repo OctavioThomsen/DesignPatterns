@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesignPatterns.AbstractFactory.Entities
+﻿namespace DesignPatterns.AbstractFactory.Entities
 {
     internal class ModernCouch : ACouch
     {
-        public string modelOfFurniture = "Modern";
+        private readonly string modelOfFurniture = "modern";
 
         public override void SitOn()
         {

@@ -17,14 +17,18 @@ while (true)
             case 1:
                 FactoryMethodExecutor.Run();
                 break;
+
             case 2:
-                AbstractFactoryMethodExecutor.Run(); 
+                AbstractFactoryMethodExecutor.Run();
                 break;
+
             case 3:
                 BuilderMethodExecutor.Run();
                 break;
+
             case 0:
                 return;
+
             default:
                 Console.WriteLine("Invalid option. Try again.");
                 break;
