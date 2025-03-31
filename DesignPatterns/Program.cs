@@ -8,6 +8,7 @@ while (true)
     Console.WriteLine("1 - Factory Method");
     Console.WriteLine("2 - Abstract Method");
     Console.WriteLine("3 - Builder Method");
+    Console.WriteLine("4 - Singleton Method");
     Console.WriteLine("0 - Exit");
 
     if (int.TryParse(Console.ReadLine(), out int patternChoice))
@@ -15,7 +16,7 @@ while (true)
         switch (patternChoice)
         {
             case 1:
-                FactoryMethodExecutor.Run();
+                SingletonMethodExecutor.Run();
                 break;
 
             case 2:
@@ -24,6 +25,10 @@ while (true)
 
             case 3:
                 BuilderMethodExecutor.Run();
+                break;
+
+            case 4:
+                SingletonMethodExecutor.Run();
                 break;
 
             case 0:
