@@ -19,7 +19,7 @@
             return $"Returning data: {Data}";
         }
 
-        public string ShowConnectionString()
+        public static string ShowConnectionString()
         {
             return $"Connection string: '{ConnectionString}'";
         }

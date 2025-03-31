@@ -11,7 +11,9 @@ namespace DesignPatterns.Builder.Interfaces
         void BuildRoof();
 
         void BuildWalls(int walls);
+
         void BuildWindows(int windows);
+
         AHouse GetResult();
 
         void Reset();

@@ -14,6 +14,7 @@ namespace DesignPatterns.AbstractFactory.Factories
         {
             return new ArtDecoCouch();
         }
+
         public ITable CreateTable()
         {
             return new ArtDecoTable();

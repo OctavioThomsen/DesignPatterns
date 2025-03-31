@@ -20,6 +20,7 @@ namespace DesignPatterns.AbstractFactory.Services
         {
             return furnitureFactory.CreateCouch();
         }
+
         public ITable GetTable()
         {
             return furnitureFactory.CreateTable();

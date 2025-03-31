@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.AbstractFactory;
 using DesignPatterns.Builder;
 using DesignPatterns.Factory;
+using DesignPatterns.Singleton;
 
 while (true)
 {
@@ -16,7 +17,7 @@ while (true)
         switch (patternChoice)
         {
             case 1:
-                SingletonMethodExecutor.Run();
+                FactoryMethodExecutor.Run();
                 break;
 
             case 2:

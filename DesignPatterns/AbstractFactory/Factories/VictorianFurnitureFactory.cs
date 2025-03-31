@@ -14,6 +14,7 @@ namespace DesignPatterns.AbstractFactory.Factories
         {
             return new VictorianCouch();
         }
+
         public ITable CreateTable()
         {
             return new VictorianTable();

@@ -1,7 +1,6 @@
-﻿using DesignPatterns.Builder.Directors;
-using DesignPatterns.Singleton.Singleton;
+﻿using DesignPatterns.Singleton.Singleton;
 
-namespace DesignPatterns.Factory
+namespace DesignPatterns.Singleton
 {
     internal static class SingletonMethodExecutor
     {
@@ -65,7 +64,6 @@ namespace DesignPatterns.Factory
                     Console.WriteLine("Invalid selection.");
                 }
             }
-
         }
     }
 }

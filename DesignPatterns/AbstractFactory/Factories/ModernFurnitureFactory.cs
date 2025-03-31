@@ -14,6 +14,7 @@ namespace DesignPatterns.AbstractFactory.Factories
         {
             return new ModernCouch();
         }
+
         public ITable CreateTable()
         {
             return new ModernTable();
