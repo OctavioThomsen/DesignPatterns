@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.AbstractFactory.Services
 {
-    public class FurnitureService : IFurnitureService
+    internal class FurnitureService : IFurnitureService
     {
         private readonly IFurnitureFactory furnitureFactory;
 
