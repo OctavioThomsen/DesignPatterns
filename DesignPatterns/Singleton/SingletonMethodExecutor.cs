@@ -16,6 +16,7 @@ namespace DesignPatterns.Factory
                 Console.WriteLine("Select what to do:");
                 Console.WriteLine("1 - Read data base");
                 Console.WriteLine("2 - Clear data base instance");
+                Console.WriteLine("3 - Show connection string");
                 Console.WriteLine("0 - Exit");
 
                 if (int.TryParse(Console.ReadLine(), out choice))
@@ -39,6 +40,12 @@ namespace DesignPatterns.Factory
                                     DataBase = null;
                                     Console.WriteLine("Data base cleared succesfully.");
                                 }
+                                break;
+                            }
+                        case 3:
+                            {
+                                DataBase = DataBase.GetInstance();
+                                Console.WriteLine(DataBase.ShowConnectionString());
                                 break;
                             }
                         case 0:
