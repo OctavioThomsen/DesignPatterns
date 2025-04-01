@@ -5,6 +5,8 @@ namespace DesignPatterns.AbstractFactory.Factories
 {
     internal class ArtDecoFurnitureFactory : IFurnitureFactory
     {
+        public string Name { get; set; } = "ArtDecoFurnitureFactory";
+
         public IChair CreateChair()
         {
             return new ArtDecoChair();

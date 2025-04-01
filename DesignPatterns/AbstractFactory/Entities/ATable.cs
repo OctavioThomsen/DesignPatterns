@@ -8,24 +8,43 @@ namespace DesignPatterns.AbstractFactory.Entities
 
         public void DoAnAction()
         {
-            Console.WriteLine("Select an action:");
-            Console.WriteLine("1 - Place on");
+            int choice = -1;
 
-            if (int.TryParse(Console.ReadLine(), out int choice))
+            while (choice != 0)
             {
-                switch (choice)
+                Console.WriteLine("Select an action:");
+                Console.WriteLine("1 - Place on");
+                Console.WriteLine("0 - Exit");
+                Console.WriteLine();
+
+                if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    case 1:
-                        {
-                            PlaceOn();
-                            break;
-                        }
-                    case 2:
-                    default:
-                        {
-                            Console.WriteLine("Invalid selection.");
-                            break;
-                        }
+                    switch (choice)
+                    {
+                        case 1:
+                            {
+                                PlaceOn();
+                                break;
+                            }
+                        case 0:
+                            {
+                                break;
+                            }
+                        case 2:
+                        default:
+                            {
+                                Console.WriteLine("Invalid option. Try again.");
+                                break;
+                            }
+                    }
+
+                    Console.WriteLine();
+                }
+                else
+                {
+                    choice = -1;
+                    Console.WriteLine("Invalid option. Try again.");
+                    Console.WriteLine();
                 }
             }
         }

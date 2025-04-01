@@ -8,30 +8,49 @@ namespace DesignPatterns.AbstractFactory.Entities
 
         public void DoAnAction()
         {
-            Console.WriteLine("Select an action:");
-            Console.WriteLine("1 - Lie down");
-            Console.WriteLine("2 - Sit on");
+            int choice = -1;
 
-            if (int.TryParse(Console.ReadLine(), out int choice))
+            while (choice != 0)
             {
-                switch (choice)
+                Console.WriteLine("Select an action:");
+                Console.WriteLine("1 - Lie down");
+                Console.WriteLine("2 - Sit on");
+                Console.WriteLine("0 - Exit");
+                Console.WriteLine();
+
+                if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    case 1:
-                        {
-                            LieDown();
-                            break;
-                        }
-                    case 2:
-                        {
-                            SitOn();
-                            break;
-                        }
-                    case 3:
-                    default:
-                        {
-                            Console.WriteLine("Invalid selection.");
-                            break;
-                        }
+                    switch (choice)
+                    {
+                        case 1:
+                            {
+                                LieDown();
+                                break;
+                            }
+                        case 2:
+                            {
+                                SitOn();
+                                break;
+                            }
+                        case 0:
+                            {
+                                break;
+                            }
+                        default:
+                            {
+                                Console.WriteLine("Invalid option. Try again.");
+                                break;
+                            }
+                    }
+
+                    Console.WriteLine();
+                }
+                else
+                {
+                    choice = -1;
+                    Console.Clear();
+                    Console.WriteLine("Invalid option. Try again.");
+                    Console.WriteLine();
                 }
             }
         }

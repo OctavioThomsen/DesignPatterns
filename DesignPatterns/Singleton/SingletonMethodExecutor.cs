@@ -13,10 +13,12 @@ namespace DesignPatterns.Singleton
             while (choice != 0)
             {
                 Console.WriteLine("Select what to do:");
-                Console.WriteLine("1 - Read data base");
-                Console.WriteLine("2 - Clear data base instance");
+                Console.WriteLine("1 - Get database instance");
+                Console.WriteLine("2 - Clear database instance");
                 Console.WriteLine("3 - Show connection string");
+                Console.WriteLine("4 - Read from data base");
                 Console.WriteLine("0 - Exit");
+                Console.WriteLine();
 
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
@@ -25,43 +27,69 @@ namespace DesignPatterns.Singleton
                         case 1:
                             {
                                 DataBase = DataBase.GetInstance();
-                                Console.WriteLine(DataBase.ReadDataBase());
+                                Console.WriteLine();
                                 break;
                             }
                         case 2:
                             {
                                 if (DataBase == null)
                                 {
-                                    Console.WriteLine("Data base was not created.");
+                                    Console.WriteLine("Database is not instanced.");
                                 }
                                 else
                                 {
                                     DataBase = null;
-                                    Console.WriteLine("Data base cleared succesfully.");
+                                    Console.WriteLine("Database cleared succesfully.");
                                 }
+                                Console.WriteLine();
                                 break;
                             }
                         case 3:
                             {
-                                DataBase = DataBase.GetInstance();
-                                Console.WriteLine(DataBase.ShowConnectionString());
+                                if (DataBase == null)
+                                {
+                                    Console.WriteLine("Database is not instanced.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine(DataBase.ShowConnectionString());
+                                }
+                                Console.WriteLine();
+                                break;
+                            }
+                        case 4:
+                            {
+                                if (DataBase == null)
+                                {
+                                    Console.WriteLine("Database is not instanced.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine(DataBase.ReadDataBase());
+                                }
+                                Console.WriteLine();
                                 break;
                             }
                         case 0:
                             {
-                                choice = 0;
+                                Console.Clear();
                                 break;
                             }
                         default:
                             {
-                                Console.WriteLine("Invalid selection.");
+                                Console.WriteLine();
+                                Console.WriteLine("Invalid option. Try again.");
+                                Console.WriteLine();
                                 break;
                             }
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid selection.");
+                    choice = -1;
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid option. Try again.");
+                    Console.WriteLine();
                 }
             }
         }

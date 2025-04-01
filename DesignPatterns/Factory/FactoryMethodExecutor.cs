@@ -1,5 +1,4 @@
 ﻿using DesignPatterns.Factory.Factories;
-using DesignPatterns.Factory.Interfaces;
 using DesignPatterns.Factory.Services;
 
 namespace DesignPatterns.Factory
@@ -8,34 +7,56 @@ namespace DesignPatterns.Factory
     {
         internal static void Run()
         {
-            Console.WriteLine("Select a logistic type:");
-            Console.WriteLine("1 - Truck");
-            Console.WriteLine("2 - Ship");
+            LogisticsService? logisticsService = null;
+            int choice = -1;
 
-            if (int.TryParse(Console.ReadLine(), out int choice))
+            while (choice != 0)
             {
-                ILogisticsFactory factory;
-                switch (choice)
+                Console.WriteLine("Select a logistic type:");
+                Console.WriteLine("1 - Truck");
+                Console.WriteLine("2 - Ship");
+                Console.WriteLine("0 - Exit");
+                Console.WriteLine();
+
+                if (int.TryParse(Console.ReadLine(), out choice))
                 {
-                    case 1:
-                        {
-                            factory = new TruckFactory();
-                            break;
-                        }
-                    case 2:
-                    default:
-                        {
-                            factory = new ShipFactory();
-                            break;
-                        }
-                }
+                    Console.WriteLine();
 
-                LogisticsService logisticsService = new(factory);
-                logisticsService.RunFactoryMethod();
-            }
-            else
-            {
-                Console.WriteLine("Invalid selection.");
+                    switch (choice)
+                    {
+                        case 1:
+                            {
+                                logisticsService = new(new TruckFactory());
+                                break;
+                            }
+                        case 2:
+                            {
+                                logisticsService = new(new ShipFactory());
+                                break;
+                            }
+                        case 0:
+                            {
+                                logisticsService = null;
+                                Console.Clear();
+                                break;
+                            }
+                        default:
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Invalid option. Try again.");
+                                break;
+                            }
+                    }
+
+                    logisticsService?.RunFactoryMethod();
+                }
+                else
+                {
+                    choice = -1;
+                    Console.Clear();
+                    Console.WriteLine("Invalid option. Try again.");
+                    Console.WriteLine();
+                }
             }
         }
     }

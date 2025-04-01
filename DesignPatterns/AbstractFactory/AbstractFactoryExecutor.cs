@@ -8,74 +8,120 @@ namespace DesignPatterns.AbstractFactory
     {
         internal static void Run()
         {
-            Console.WriteLine("Select a model:");
-            Console.WriteLine("1 - ArtDeco");
-            Console.WriteLine("2 - Modern");
-            Console.WriteLine("3 - Victorian");
+            FurnitureService? furnitureService = null;
+            int modelChoice = -1;
+            int furnitureChoice = -1;
 
-            if (int.TryParse(Console.ReadLine(), out int choice))
+            while (modelChoice != 0)
             {
-                IFurnitureFactory furnitureFactory;
-                switch (choice)
+                Console.WriteLine("Select a model:");
+                Console.WriteLine("1 - ArtDeco");
+                Console.WriteLine("2 - Modern");
+                Console.WriteLine("3 - Victorian");
+                Console.WriteLine("0 - Exit");
+                Console.WriteLine();
+
+                if (int.TryParse(Console.ReadLine(), out modelChoice))
                 {
-                    case 1:
-                        {
-                            furnitureFactory = new ArtDecoFurnitureFactory();
-                            break;
-                        }
-                    case 2:
-                        {
-                            furnitureFactory = new ModernFurnitureFactory();
-                            break;
-                        }
-                    case 3:
-                    default:
-                        {
-                            furnitureFactory = new VictorianFurnitureFactory();
-                            break;
-                        }
-                }
+                    Console.WriteLine();
 
-                FurnitureService FurnitureService = new(furnitureFactory);
-
-                Console.WriteLine("Select a furniture:");
-                Console.WriteLine("1 - Couch");
-                Console.WriteLine("2 - Chair");
-                Console.WriteLine("3 - Table");
-
-                if (int.TryParse(Console.ReadLine(), out choice))
-                {
-                    IFurniture furniture;
-                    switch (choice)
+                    switch (modelChoice)
                     {
                         case 1:
                             {
-                                furniture = FurnitureService.GetCouch();
+                                furnitureService = new(new ArtDecoFurnitureFactory());
                                 break;
                             }
                         case 2:
                             {
-                                furniture = FurnitureService.GetChair();
+                                furnitureService = new(new ModernFurnitureFactory());
                                 break;
                             }
                         case 3:
+                            {
+                                furnitureService = new(new VictorianFurnitureFactory());
+                                break;
+                            }
+                        case 0:
+                            {
+                                furnitureService = null;
+                                Console.Clear();
+                                break;
+                            }
                         default:
                             {
-                                furniture = FurnitureService.GetTable();
+                                Console.WriteLine();
+                                Console.WriteLine("Invalid option. Try again.");
+                                Console.WriteLine();
                                 break;
                             }
                     }
 
-                    furniture.DoAnAction();
+                    furnitureChoice = -1;
+
+                    while (furnitureService != null && furnitureChoice != 0)
+                    {
+                        Console.WriteLine("Select a furniture:");
+                        Console.WriteLine("1 - Couch");
+                        Console.WriteLine("2 - Chair");
+                        Console.WriteLine("3 - Table");
+                        Console.WriteLine("0 - Exit");
+                        Console.WriteLine();
+
+                        if (int.TryParse(Console.ReadLine(), out furnitureChoice))
+                        {
+                            IFurniture? furniture = null;
+
+                            switch (furnitureChoice)
+                            {
+                                case 1:
+                                    {
+                                        furniture = furnitureService.GetCouch();
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        furniture = furnitureService.GetChair();
+                                        break;
+                                    }
+                                case 3:
+                                    {
+                                        furniture = furnitureService.GetTable();
+                                        break;
+                                    }
+                                case 0:
+                                    {
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        Console.WriteLine();
+                                        Console.WriteLine("Invalid option. Try again.");
+                                        Console.WriteLine();
+                                        break;
+                                    }
+                            }
+
+                            Console.WriteLine();
+
+                            furniture?.DoAnAction();
+                        }
+                        else
+                        {
+                            furnitureChoice = -1;
+                            Console.WriteLine();
+                            Console.WriteLine("Invalid option. Try again.");
+                            Console.WriteLine();
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid selection.");
+                    modelChoice = -1;
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid option. Try again.");
+                    Console.WriteLine();
                 }
-            }
-            else
-            {
-                Console.WriteLine("Invalid selection.");
             }
         }
     }

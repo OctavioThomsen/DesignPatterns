@@ -5,6 +5,8 @@ namespace DesignPatterns.AbstractFactory.Factories
 {
     internal class VictorianFurnitureFactory : IFurnitureFactory
     {
+        public readonly string Name = "VictorianFurnitureFactory";
+
         public IChair CreateChair()
         {
             return new VictorianChair();

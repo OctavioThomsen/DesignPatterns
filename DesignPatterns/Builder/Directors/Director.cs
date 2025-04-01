@@ -6,7 +6,7 @@ namespace DesignPatterns.Builder.Directors
     {
         internal IHouseBuilder HouseBuilder { get; set; } = houseBuilder;
 
-        public void MakeStandarHouse()
+        public void MakeStandardHouse()
         {
             HouseBuilder.Reset();
             HouseBuilder.BuildWalls(4);

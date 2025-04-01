@@ -20,6 +20,7 @@ namespace DesignPatterns.Factory.Services
         {
             ITransport package = GetPackage();
             package.Deliver();
+            Console.WriteLine();
         }
     }
 }

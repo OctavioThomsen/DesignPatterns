@@ -13,9 +13,8 @@
 
         public string ReadDataBase()
         {
-            Console.WriteLine("Going back and forth to the database to obtain the information.");
             Data = "Data example";
-
+            
             return $"Returning data: {Data}";
         }
 
