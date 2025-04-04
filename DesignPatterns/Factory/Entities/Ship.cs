@@ -9,6 +9,7 @@ namespace DesignPatterns.Factory.Entities
         public void Deliver()
         {
             Console.WriteLine($"Delivering by {typeOfTransport}.");
+            Console.WriteLine();
         }
     }
 }

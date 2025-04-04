@@ -4,6 +4,6 @@
     {
         ITransport GetPackage();
 
-        void RunFactoryMethod();
+        void GetAndDeliverPackage();
     }
 }

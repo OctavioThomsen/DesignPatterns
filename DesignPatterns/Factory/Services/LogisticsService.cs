@@ -16,11 +16,10 @@ namespace DesignPatterns.Factory.Services
             return logisticsFactory.CreateTransport();
         }
 
-        public void RunFactoryMethod()
+        public void GetAndDeliverPackage()
         {
             ITransport package = GetPackage();
             package.Deliver();
-            Console.WriteLine();
         }
     }
 }
