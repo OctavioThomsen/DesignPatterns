@@ -2,6 +2,15 @@
 using DesignPatterns.Builder;
 using DesignPatterns.Factory;
 using DesignPatterns.Singleton;
+using DesignPatterns.Singleton.Services;
+using DesignPatterns.Singleton.Singleton;
+using Microsoft.Extensions.DependencyInjection;
+
+var services = new ServiceCollection();
+services.AddSingleton<Database>(provider => Database.GetInstance());
+services.AddTransient<DatabaseExecutorService>();
+var serviceProvider = services.BuildServiceProvider();
+var executor = serviceProvider.GetRequiredService<DatabaseExecutorService>();
 
 int patternChoice = -1;
 
@@ -44,7 +53,7 @@ while (patternChoice != 0)
                 Console.Clear();
                 Console.WriteLine("SINGLETON METHOD.");
                 Console.WriteLine();
-                SingletonMethodExecutor.Run();
+                SingletonMethodExecutor.Run(executor);
                 break;
 
             case 0:

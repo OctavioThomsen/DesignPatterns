@@ -1,12 +1,14 @@
-﻿namespace DesignPatterns.Singleton.Singleton
+﻿using DesignPatterns.Singleton.Helpers;
+
+namespace DesignPatterns.Singleton.Singleton
 {
-    internal class DataBase
+    internal class Database
     {
         private static string? ConnectionString;
-        private static DataBase? Instance;
+        private static Database? Instance;
         public string? Data { get; set; }
 
-        private DataBase()
+        private Database()
         {
             ConnectionString = "SQLconnection";
         }
@@ -23,17 +25,18 @@
             return $"Connection string: '{ConnectionString}'";
         }
 
-        internal static DataBase GetInstance()
+        internal static Database GetInstance()
         {
             if (Instance == null)
             {
-                Instance = new DataBase();
-                Console.WriteLine("DataBase created.");
+                Instance = new Database();
+                PrintsHelper.DatabaseCreatedForFirstTime();
             }
             else
             {
-                Console.WriteLine("DataBase was already created.");
+                PrintsHelper.DatabaseAlreadyCreated();
             }
+            Console.WriteLine();
 
             return Instance;
         }
