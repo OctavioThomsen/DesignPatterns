@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Factory.Factories;
+﻿using DesignPatterns.Builder.Helpers;
+using DesignPatterns.Factory.Factories;
 
 namespace DesignPatterns.Factory.Services
 {
@@ -10,10 +11,16 @@ namespace DesignPatterns.Factory.Services
             {
                 1 => new LogisticsService(new TruckFactory()),
                 2 => new LogisticsService(new ShipFactory()),
-                _ => null
+                _ => ReturnNullWithMessage()
             };
 
             logisticsService?.GetAndDeliverPackage();
+        }
+
+        private static LogisticsService? ReturnNullWithMessage()
+        {
+            PrintsHelper.InvalidOption();
+            return null;
         }
     }
 }
