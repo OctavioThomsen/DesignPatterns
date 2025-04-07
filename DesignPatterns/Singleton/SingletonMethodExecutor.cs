@@ -22,6 +22,8 @@ namespace DesignPatterns.Singleton
                     PrintsHelper.InvalidOption();
                 }
             }
+
+            Console.Clear();
         }
     }
 }
