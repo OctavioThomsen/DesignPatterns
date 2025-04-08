@@ -2,6 +2,7 @@
 using DesignPatterns.Builder.Directors;
 using DesignPatterns.Builder.Helpers;
 using DesignPatterns.Builder.Services;
+using DesignPatterns.Shared.Helpers;
 
 internal static class BuilderExecutorService
 {
@@ -21,7 +22,7 @@ internal static class BuilderExecutorService
 
     private static Director? ReturnNullWithMessage()
     {
-        PrintsHelper.InvalidOption();
+        SharedPrintHelpers.InvalidOption();
         return null;
     }
 }

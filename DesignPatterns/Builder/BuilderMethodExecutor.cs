@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Builder.Helpers;
 using DesignPatterns.Builder.Services;
+using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.Builder
 {
@@ -11,7 +12,7 @@ namespace DesignPatterns.Builder
 
             while (directorChoice != 9)
             {
-                PrintsHelper.BuilderTypeSelector();
+                BuilderPrintsHelper.BuilderTypeSelector();
 
                 if (int.TryParse(Console.ReadLine(), out directorChoice))
                 {
@@ -25,7 +26,7 @@ namespace DesignPatterns.Builder
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
             }
 

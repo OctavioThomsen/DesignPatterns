@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Factory.Helpers;
 using DesignPatterns.Factory.Services;
+using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.Factory
 {
@@ -11,7 +12,7 @@ namespace DesignPatterns.Factory
 
             while (choice != 9)
             {
-                PrintsHelper.LogisticTypeSelector();
+                FactoryPrintsHelper.LogisticTypeSelector();
 
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
@@ -19,7 +20,7 @@ namespace DesignPatterns.Factory
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
             }
 

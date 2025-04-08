@@ -1,16 +1,12 @@
-﻿using DesignPatterns.Singleton.Helpers;
+﻿using DesignPatterns.Shared.Helpers;
+using DesignPatterns.Singleton.Helpers;
 using DesignPatterns.Singleton.Singleton;
 
 namespace DesignPatterns.Singleton.Services
 {
-    internal class DatabaseExecutorService
+    internal class DatabaseExecutorService(Database? database)
     {
-        private Database? database;
-
-        public DatabaseExecutorService(Database? database)
-        {
-            this.database = database;
-        }
+        private Database? database = database;
 
         public void Execute(int option)
         {
@@ -43,7 +39,7 @@ namespace DesignPatterns.Singleton.Services
                     }
                 default:
                     {
-                        PrintsHelper.InvalidOption();
+                        SharedPrintHelpers.InvalidOption();
                         break;
                     }
             }
@@ -53,7 +49,7 @@ namespace DesignPatterns.Singleton.Services
         {
             if (IsDatabaseInstanced())
             {
-                PrintsHelper.DatabaseAlreadyInstanced();
+                SingletonPrintsHelper.DatabaseAlreadyInstanced();
             }
             else
             {
@@ -66,11 +62,11 @@ namespace DesignPatterns.Singleton.Services
             if (IsDatabaseInstanced())
             {
                 database = null;
-                PrintsHelper.DatabaseCleared();
+                SingletonPrintsHelper.DatabaseCleared();
             }
             else
             {
-                PrintsHelper.DatabaseNotInstanced();
+                SingletonPrintsHelper.DatabaseNotInstanced();
             }
         }
 
@@ -83,7 +79,7 @@ namespace DesignPatterns.Singleton.Services
             }
             else
             {
-                PrintsHelper.DatabaseNotInstanced();
+                SingletonPrintsHelper.DatabaseNotInstanced();
             }
         }
 
@@ -96,7 +92,7 @@ namespace DesignPatterns.Singleton.Services
             }
             else
             {
-                PrintsHelper.DatabaseNotInstanced();
+                SingletonPrintsHelper.DatabaseNotInstanced();
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.AbstractFactory.Helpers
 {
-    internal static class PrintsHelper
+    internal static class AbstractFactoryPrintsHelper
     {
         public static void ChairActionSelector()
         {
@@ -29,12 +29,6 @@
             Console.WriteLine();
         }
 
-        public static void InvalidOption()
-        {
-            Console.WriteLine("Invalid option. Try again.");
-            Console.WriteLine();
-        }
-
         public static void ModelSelector()
         {
             Console.WriteLine("Select a model:");
@@ -44,6 +38,7 @@
             Console.WriteLine("9 - Exit");
             Console.WriteLine();
         }
+
         public static void TableActionSelector()
         {
             Console.WriteLine("Select an action:");

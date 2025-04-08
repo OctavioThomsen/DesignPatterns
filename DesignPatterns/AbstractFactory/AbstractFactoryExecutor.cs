@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.AbstractFactory.Helpers;
 using DesignPatterns.AbstractFactory.Services;
+using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.AbstractFactory
 {
@@ -11,7 +12,7 @@ namespace DesignPatterns.AbstractFactory
 
             while (modelChoice != 9)
             {
-                PrintsHelper.ModelSelector();
+                AbstractFactoryPrintsHelper.ModelSelector();
 
                 if (int.TryParse(Console.ReadLine(), out modelChoice))
                 {
@@ -25,7 +26,7 @@ namespace DesignPatterns.AbstractFactory
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
             }
         }

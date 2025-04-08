@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.AbstractFactory.Helpers;
 using DesignPatterns.AbstractFactory.Interfaces;
+using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.AbstractFactory.Services
 {
@@ -41,7 +42,7 @@ namespace DesignPatterns.AbstractFactory.Services
 
         private static IFurniture? ReturnNullWithMessage()
         {
-            PrintsHelper.InvalidOption();
+            SharedPrintHelpers.InvalidOption();
             return null;
         }
     }

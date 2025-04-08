@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Builder.Helpers;
 using DesignPatterns.Factory.Factories;
+using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.Factory.Services
 {
@@ -19,7 +20,7 @@ namespace DesignPatterns.Factory.Services
 
         private static LogisticsService? ReturnNullWithMessage()
         {
-            PrintsHelper.InvalidOption();
+            SharedPrintHelpers.InvalidOption();
             return null;
         }
     }

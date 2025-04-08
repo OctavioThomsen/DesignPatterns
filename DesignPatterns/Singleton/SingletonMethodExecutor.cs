@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Singleton.Helpers;
+﻿using DesignPatterns.Shared.Helpers;
+using DesignPatterns.Singleton.Helpers;
 using DesignPatterns.Singleton.Services;
 
 namespace DesignPatterns.Singleton
@@ -11,7 +12,7 @@ namespace DesignPatterns.Singleton
 
             while (choice != 9)
             {
-                PrintsHelper.WhatToDoSelector();
+                SingletonPrintsHelper.WhatToDoSelector();
 
                 if (int.TryParse(Console.ReadLine(), out choice))
                 {
@@ -19,7 +20,7 @@ namespace DesignPatterns.Singleton
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
             }
 

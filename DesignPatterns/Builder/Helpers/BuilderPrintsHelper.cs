@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesignPatterns.Builder.Helpers
+﻿namespace DesignPatterns.Builder.Helpers
 {
-    internal class PrintsHelper
+    internal class BuilderPrintsHelper
     {
         public static void BuilderTypeSelector()
         {
@@ -30,12 +24,6 @@ namespace DesignPatterns.Builder.Helpers
             Console.WriteLine("7 - Show the house");
             Console.WriteLine("8 - Reset house");
             Console.WriteLine("9 - Exit");
-            Console.WriteLine();
-        }
-
-        public static void InvalidOption()
-        {
-            Console.WriteLine("Invalid option. Try again.");
             Console.WriteLine();
         }
     }

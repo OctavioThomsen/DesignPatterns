@@ -30,11 +30,11 @@ namespace DesignPatterns.Singleton.Singleton
             if (Instance == null)
             {
                 Instance = new Database();
-                PrintsHelper.DatabaseCreatedForFirstTime();
+                SingletonPrintsHelper.DatabaseCreatedForFirstTime();
             }
             else
             {
-                PrintsHelper.DatabaseAlreadyCreated();
+                SingletonPrintsHelper.DatabaseAlreadyCreated();
             }
             Console.WriteLine();
 

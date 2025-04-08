@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.AbstractFactory.Helpers;
 using DesignPatterns.AbstractFactory.Interfaces;
+using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.AbstractFactory.Services
 {
@@ -11,7 +12,7 @@ namespace DesignPatterns.AbstractFactory.Services
 
             while (furnitureChoice != 9)
             {
-                PrintsHelper.FurnitureSelector();
+                AbstractFactoryPrintsHelper.FurnitureSelector();
 
                 if (int.TryParse(Console.ReadLine(), out furnitureChoice))
                 {
@@ -25,7 +26,7 @@ namespace DesignPatterns.AbstractFactory.Services
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
             }
         }
@@ -58,18 +59,18 @@ namespace DesignPatterns.AbstractFactory.Services
 
             while (option != 9)
             {
-                PrintsHelper.ChairActionSelector();
+                AbstractFactoryPrintsHelper.ChairActionSelector();
 
                 if (int.TryParse(Console.ReadLine(), out option))
                 {
                     if (option == 1)
                         chair.SitOn();
                     else if (option != 9)
-                        PrintsHelper.InvalidOption();
+                        SharedPrintHelpers.InvalidOption();
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
 
                 Console.WriteLine();
@@ -82,7 +83,7 @@ namespace DesignPatterns.AbstractFactory.Services
 
             while (option != 9)
             {
-                PrintsHelper.CouchActionSelector();
+                AbstractFactoryPrintsHelper.CouchActionSelector();
 
                 if (int.TryParse(Console.ReadLine(), out option))
                 {
@@ -91,11 +92,11 @@ namespace DesignPatterns.AbstractFactory.Services
                     else if (option == 2)
                         couch.LieDown();
                     else if (option != 9)
-                        PrintsHelper.InvalidOption();
+                        SharedPrintHelpers.InvalidOption();
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
 
                 Console.WriteLine();
@@ -108,18 +109,18 @@ namespace DesignPatterns.AbstractFactory.Services
 
             while (option != 9)
             {
-                PrintsHelper.TableActionSelector();
+                AbstractFactoryPrintsHelper.TableActionSelector();
 
                 if (int.TryParse(Console.ReadLine(), out option))
                 {
                     if (option == 1)
                         table.PlaceOn();
                     else if (option != 9)
-                        PrintsHelper.InvalidOption();
+                        SharedPrintHelpers.InvalidOption();
                 }
                 else
                 {
-                    PrintsHelper.InvalidOption();
+                    SharedPrintHelpers.InvalidOption();
                 }
 
                 Console.WriteLine();

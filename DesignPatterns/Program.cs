@@ -74,7 +74,6 @@ while (patternChoice != 9)
     }
     else
     {
-        patternChoice = -1;
         Console.Clear();
         Console.WriteLine("Invalid option. Try again.");
         Console.WriteLine();
