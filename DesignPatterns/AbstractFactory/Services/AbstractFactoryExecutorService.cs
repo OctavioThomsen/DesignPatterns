@@ -1,7 +1,4 @@
 ﻿using DesignPatterns.AbstractFactory.Factories;
-using DesignPatterns.AbstractFactory.Helpers;
-using DesignPatterns.AbstractFactory.Interfaces;
-using DesignPatterns.Builder.Services;
 using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.AbstractFactory.Services

@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.AbstractFactory;
 using DesignPatterns.Builder;
 using DesignPatterns.Factory;
+using DesignPatterns.Shared.Helpers;
 using DesignPatterns.Singleton;
 using DesignPatterns.Singleton.Services;
 using DesignPatterns.Singleton.Singleton;
@@ -67,15 +68,13 @@ while (patternChoice != 9)
 
             default:
                 Console.Clear();
-                Console.WriteLine("Invalid option. Try again.");
-                Console.WriteLine();
+                SharedPrintHelpers.InvalidOption();
                 break;
         }
     }
     else
     {
         Console.Clear();
-        Console.WriteLine("Invalid option. Try again.");
-        Console.WriteLine();
+        SharedPrintHelpers.InvalidOption();
     }
 }

@@ -1,5 +1,4 @@
-﻿using DesignPatterns.Builder.Helpers;
-using DesignPatterns.Factory.Factories;
+﻿using DesignPatterns.Factory.Factories;
 using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.Factory.Services

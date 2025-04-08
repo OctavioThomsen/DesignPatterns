@@ -1,6 +1,5 @@
 ﻿using DesignPatterns.Builder.Builders;
 using DesignPatterns.Builder.Directors;
-using DesignPatterns.Builder.Helpers;
 using DesignPatterns.Builder.Services;
 using DesignPatterns.Shared.Helpers;
 

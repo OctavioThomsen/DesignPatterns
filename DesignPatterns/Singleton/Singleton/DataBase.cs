@@ -16,7 +16,7 @@ namespace DesignPatterns.Singleton.Singleton
         public string ReadDataBase()
         {
             Data = "Data example";
-            
+
             return $"Returning data: {Data}";
         }
 
