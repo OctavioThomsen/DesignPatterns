@@ -2,9 +2,14 @@
 
 namespace DesignPatterns.Builder.Directors
 {
-    internal class Director(IHouseBuilder houseBuilder)
+    internal class Director : IDirector
     {
-        internal IHouseBuilder HouseBuilder { get; set; } = houseBuilder;
+        internal IHouseBuilder HouseBuilder { get; set; }
+
+        internal Director(IHouseBuilder houseBuilder)
+        {
+            HouseBuilder = houseBuilder;
+        }
 
         public void MakeStandardHouse()
         {

@@ -3,7 +3,7 @@ using DesignPatterns.Shared.Helpers;
 
 namespace DesignPatterns.AbstractFactory.Services
 {
-    internal class AbstractFactoryExecutorService
+    internal static class AbstractFactoryExecutorService
     {
         public static FurnitureService? Execute(int option)
         {

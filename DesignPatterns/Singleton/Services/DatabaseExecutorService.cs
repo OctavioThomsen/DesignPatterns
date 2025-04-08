@@ -3,9 +3,14 @@ using DesignPatterns.Singleton.Interfaces;
 
 namespace DesignPatterns.Singleton.Services
 {
-    internal class DatabaseExecutorService(IDatabase database) : IDatabaseExecutorService
+    internal class DatabaseExecutorService : IDatabaseExecutorService
     {
-        private readonly IDatabase _database = database;
+        private readonly IDatabase _database;
+
+        public DatabaseExecutorService(IDatabase database)
+        {
+            _database = database;
+        }
 
         public void Execute(int option)
         {
