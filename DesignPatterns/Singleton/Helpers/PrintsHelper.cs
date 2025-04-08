@@ -46,7 +46,6 @@
         public static void DatabaseCreatedForFirstTime()
         {
             Console.WriteLine("Database created for the first time.");
-            Console.WriteLine();
         }
     }
 }

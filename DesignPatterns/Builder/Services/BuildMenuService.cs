@@ -4,7 +4,7 @@ namespace DesignPatterns.Builder.Services
 {
     internal static class BuildMenuService
     {
-        public static void Start(HouseConstructionService houseService)
+        public static void Start(HouseConstructionService houseConstructionService)
         {
             int buildChoice = -1;
             int quantity;
@@ -20,41 +20,41 @@ namespace DesignPatterns.Builder.Services
                         case 1:
                             Console.Write("How many walls?: ");
                             int.TryParse(Console.ReadLine(), out quantity);
-                            houseService.BuildWalls(quantity);
+                            houseConstructionService.BuildWalls(quantity);
                             Console.WriteLine($"{quantity} walls created successfully.");
                             break;
 
                         case 2:
                             Console.Write("How many doors?: ");
                             int.TryParse(Console.ReadLine(), out quantity);
-                            houseService.BuildDoors(quantity);
+                            houseConstructionService.BuildDoors(quantity);
                             Console.WriteLine($"{quantity} doors created successfully.");
                             break;
 
                         case 3:
                             Console.Write("How many windows?: ");
                             int.TryParse(Console.ReadLine(), out quantity);
-                            houseService.BuildWindows(quantity);
+                            houseConstructionService.BuildWindows(quantity);
                             Console.WriteLine($"{quantity} windows created successfully.");
                             break;
 
                         case 4:
-                            houseService.BuildRoof();
+                            houseConstructionService.BuildRoof();
                             Console.WriteLine("Roof created successfully.");
                             break;
 
                         case 5:
-                            houseService.BuildGarage();
+                            houseConstructionService.BuildGarage();
                             Console.WriteLine("Garage created successfully.");
                             break;
 
                         case 6:
-                            houseService.MakeStandardHouse();
+                            houseConstructionService.MakeStandardHouse();
                             Console.WriteLine("Standard house created successfully.");
                             break;
 
                         case 7:
-                            var house = houseService.GetHouse();
+                            var house = houseConstructionService.GetHouse();
                             Console.WriteLine($"Your house made of {house.Material} has:");
                             Console.WriteLine($"{house.Walls} walls");
                             Console.WriteLine($"{house.Doors} doors");
@@ -64,7 +64,7 @@ namespace DesignPatterns.Builder.Services
                             break;
 
                         case 8:
-                            houseService.Reset();
+                            houseConstructionService.Reset();
                             Console.WriteLine("House reset.");
                             break;
 

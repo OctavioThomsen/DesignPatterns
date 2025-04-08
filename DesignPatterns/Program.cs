@@ -6,22 +6,25 @@ using DesignPatterns.Singleton.Services;
 using DesignPatterns.Singleton.Singleton;
 using Microsoft.Extensions.DependencyInjection;
 
+Console.WriteLine("Starting dependency inyection:");
 var services = new ServiceCollection();
 services.AddSingleton<Database>(provider => Database.GetInstance());
 services.AddTransient<DatabaseExecutorService>();
 var serviceProvider = services.BuildServiceProvider();
 var executor = serviceProvider.GetRequiredService<DatabaseExecutorService>();
+Console.WriteLine("Ending dependency inyection.");
+Console.WriteLine();
 
 int patternChoice = -1;
 
-while (patternChoice != 0)
+while (patternChoice != 9)
 {
     Console.WriteLine("Select a design pattern:");
     Console.WriteLine("1 - Abstract Factory Method");
     Console.WriteLine("2 - Builder Method");
     Console.WriteLine("3 - Factory Method");
     Console.WriteLine("4 - Singleton Method");
-    Console.WriteLine("0 - Exit");
+    Console.WriteLine("9 - Exit");
     Console.WriteLine();
 
     if (int.TryParse(Console.ReadLine(), out patternChoice))
@@ -56,7 +59,7 @@ while (patternChoice != 0)
                 SingletonMethodExecutor.Run(executor);
                 break;
 
-            case 0:
+            case 9:
                 Console.WriteLine();
                 Console.WriteLine("Quiting...");
                 Console.WriteLine();

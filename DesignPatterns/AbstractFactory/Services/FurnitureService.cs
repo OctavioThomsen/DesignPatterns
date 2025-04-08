@@ -1,4 +1,5 @@
-﻿using DesignPatterns.AbstractFactory.Interfaces;
+﻿using DesignPatterns.AbstractFactory.Helpers;
+using DesignPatterns.AbstractFactory.Interfaces;
 
 namespace DesignPatterns.AbstractFactory.Services
 {
@@ -9,6 +10,18 @@ namespace DesignPatterns.AbstractFactory.Services
         internal FurnitureService(IFurnitureFactory factory)
         {
             furnitureFactory = factory;
+        }
+
+        public IFurniture? Execute(int option)
+        {
+            return option switch
+            {
+                1 => GetCouch(),
+                2 => GetChair(),
+                3 => GetTable(),
+                9 => null,
+                _ => ReturnNullWithMessage()
+            };
         }
 
         public IChair GetChair()
@@ -24,6 +37,12 @@ namespace DesignPatterns.AbstractFactory.Services
         public ITable GetTable()
         {
             return furnitureFactory.CreateTable();
+        }
+
+        private static IFurniture? ReturnNullWithMessage()
+        {
+            PrintsHelper.InvalidOption();
+            return null;
         }
     }
 }
