@@ -1,12 +1,12 @@
 ﻿using DesignPatterns.Shared.Helpers;
 using DesignPatterns.Singleton.Helpers;
-using DesignPatterns.Singleton.Services;
+using DesignPatterns.Singleton.Interfaces;
 
 namespace DesignPatterns.Singleton
 {
     internal static class SingletonMethodExecutor
     {
-        internal static void Run(DatabaseExecutorService databaseExecutorService)
+        internal static void Run(IDatabaseExecutorService databaseExecutorService)
         {
             int choice = -1;
 

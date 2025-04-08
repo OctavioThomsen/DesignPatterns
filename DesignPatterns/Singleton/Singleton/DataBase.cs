@@ -1,44 +1,42 @@
-﻿using DesignPatterns.Singleton.Helpers;
+﻿using DesignPatterns.Singleton.Interfaces;
 
 namespace DesignPatterns.Singleton.Singleton
 {
-    internal class Database
+    internal class Database : IDatabase
     {
-        private static string? ConnectionString;
-        private static Database? Instance;
-        public string? Data { get; set; }
+        private static Database? _instance;
+        private static readonly object _lock = new();
+        private readonly string? ConnectionString;
 
         private Database()
         {
             ConnectionString = "SQLconnection";
+            Console.WriteLine("Database instance created by DI.");
+        }
+
+        public static Database GetInstance()
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    _instance = new Database();
+                }
+            }
+
+            return _instance;
         }
 
         public string ReadDataBase()
         {
-            Data = "Data example";
+            string Data = "Data example";
 
             return $"Returning data: {Data}";
         }
 
-        public static string ShowConnectionString()
+        public string ShowConnectionString()
         {
             return $"Connection string: '{ConnectionString}'";
-        }
-
-        internal static Database GetInstance()
-        {
-            if (Instance == null)
-            {
-                Instance = new Database();
-                SingletonPrintsHelper.DatabaseCreatedForFirstTime();
-            }
-            else
-            {
-                SingletonPrintsHelper.DatabaseAlreadyCreated();
-            }
-            Console.WriteLine();
-
-            return Instance;
         }
     }
 }

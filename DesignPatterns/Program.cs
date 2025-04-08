@@ -3,16 +3,17 @@ using DesignPatterns.Builder;
 using DesignPatterns.Factory;
 using DesignPatterns.Shared.Helpers;
 using DesignPatterns.Singleton;
+using DesignPatterns.Singleton.Interfaces;
 using DesignPatterns.Singleton.Services;
 using DesignPatterns.Singleton.Singleton;
 using Microsoft.Extensions.DependencyInjection;
 
 Console.WriteLine("Starting dependency inyection:");
 var services = new ServiceCollection();
-services.AddSingleton<Database>(provider => Database.GetInstance());
-services.AddTransient<DatabaseExecutorService>();
+services.AddSingleton<IDatabase, Database>(provider => Database.GetInstance());
+services.AddTransient<IDatabaseExecutorService, DatabaseExecutorService>();
 var serviceProvider = services.BuildServiceProvider();
-var executor = serviceProvider.GetRequiredService<DatabaseExecutorService>();
+var executor = serviceProvider.GetRequiredService<IDatabaseExecutorService>();
 Console.WriteLine("Ending dependency inyection.");
 Console.WriteLine();
 
