@@ -48,7 +48,7 @@ namespace DesignPatterns.Patterns.AbstractFactory.Services
                     break;
 
                 default:
-                    Console.WriteLine("Unknown furniture type.");
+                    SharedPrintHelpers.InvalidOption();
                     break;
             }
         }

@@ -39,6 +39,11 @@
             Console.WriteLine();
         }
 
+        public static void PatternDesignTittle()
+        {
+            Console.WriteLine("ABSTRACT FACTORY METHOD.");
+            Console.WriteLine();
+        }
         public static void TableActionSelector()
         {
             Console.WriteLine("Select an action:");

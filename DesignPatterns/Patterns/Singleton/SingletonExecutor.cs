@@ -1,14 +1,24 @@
 ﻿using DesignPatterns.Patterns.Singleton.Helpers;
 using DesignPatterns.Patterns.Singleton.Interfaces;
 using DesignPatterns.Shared.Helpers;
+using DesignPatterns.Shared.Interfaces;
 
 namespace DesignPatterns.Patterns.Singleton
 {
-    internal static class SingletonMethodExecutor
+    internal class SingletonExecutor : IPatternExecutor
     {
-        internal static void Run(IDatabaseExecutorService databaseExecutorService)
+        private readonly IDatabaseExecutorService databaseExecutorService;
+
+        public SingletonExecutor(IDatabaseExecutorService databaseExecutorService)
+        {
+            this.databaseExecutorService = databaseExecutorService;
+        }
+
+        public void Execute()
         {
             int choice = -1;
+
+            SingletonPrintsHelper.PatternDesignTittle();
 
             while (choice != 9)
             {
@@ -23,8 +33,6 @@ namespace DesignPatterns.Patterns.Singleton
                     SharedPrintHelpers.InvalidOption();
                 }
             }
-
-            Console.Clear();
         }
     }
 }

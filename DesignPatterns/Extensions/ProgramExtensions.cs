@@ -1,6 +1,12 @@
-﻿using DesignPatterns.Patterns.Singleton.Interfaces;
+﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Patterns.Builder;
+using DesignPatterns.Patterns.Factory;
+using DesignPatterns.Patterns.Singleton;
+using DesignPatterns.Patterns.Singleton.Interfaces;
 using DesignPatterns.Patterns.Singleton.Services;
 using DesignPatterns.Patterns.Singleton.Singleton;
+using DesignPatterns.Services;
+using DesignPatterns.Shared.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Extensions
@@ -9,8 +15,16 @@ namespace DesignPatterns.Extensions
     {
         public static IServiceCollection AddProjectDependencies(this IServiceCollection services)
         {
-            services.AddSingleton<IDatabase, Database>(provider => Database.GetInstance());
+            services.AddSingleton<IDatabase>(provider => Database.GetInstance());
+
             services.AddTransient<IDatabaseExecutorService, DatabaseExecutorService>();
+
+            services.AddTransient<AbstractFactoryExecutor>();
+            services.AddTransient<BuilderExecutor>();
+            services.AddTransient<FactoryExecutor>();
+            services.AddTransient<SingletonExecutor>();
+
+            services.AddTransient<PatternExecutorService>();
 
             return services;
         }

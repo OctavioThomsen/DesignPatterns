@@ -10,5 +10,11 @@
             Console.WriteLine("9 - Exit");
             Console.WriteLine();
         }
+
+        internal static void PatternDesignTittle()
+        {
+            Console.WriteLine("SINGLETON METHOD.");
+            Console.WriteLine();
+        }
     }
 }

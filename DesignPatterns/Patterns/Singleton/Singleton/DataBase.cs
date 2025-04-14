@@ -12,6 +12,7 @@ namespace DesignPatterns.Patterns.Singleton.Singleton
         {
             ConnectionString = "SQLconnection";
             Console.WriteLine("Database instance created by DI.");
+            Console.WriteLine();
         }
 
         public static Database GetInstance()

@@ -1,14 +1,17 @@
 ﻿using DesignPatterns.Patterns.Builder.Helpers;
 using DesignPatterns.Patterns.Builder.Services;
 using DesignPatterns.Shared.Helpers;
+using DesignPatterns.Shared.Interfaces;
 
 namespace DesignPatterns.Patterns.Builder
 {
-    internal class BuilderMethodExecutor
+    internal class BuilderExecutor : IPatternExecutor
     {
-        internal static void Run()
+        public void Execute()
         {
             int directorChoice = -1;
+
+            BuilderPrintsHelper.PatternDesignTittle();
 
             while (directorChoice != 9)
             {
@@ -29,8 +32,6 @@ namespace DesignPatterns.Patterns.Builder
                     SharedPrintHelpers.InvalidOption();
                 }
             }
-
-            Console.Clear();
         }
     }
 }

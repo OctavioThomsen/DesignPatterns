@@ -1,4 +1,5 @@
-﻿namespace DesignPatterns.Patterns.Builder.Helpers
+﻿
+namespace DesignPatterns.Patterns.Builder.Helpers
 {
     internal class BuilderPrintsHelper
     {
@@ -24,6 +25,12 @@
             Console.WriteLine("7 - Show the house");
             Console.WriteLine("8 - Reset house");
             Console.WriteLine("9 - Exit");
+            Console.WriteLine();
+        }
+
+        internal static void PatternDesignTittle()
+        {
+            Console.WriteLine("BUILDER METHOD.");
             Console.WriteLine();
         }
     }

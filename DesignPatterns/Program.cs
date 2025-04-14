@@ -1,9 +1,5 @@
-﻿using DesignPatterns.AbstractFactory;
-using DesignPatterns.Extensions;
-using DesignPatterns.Patterns.Builder;
-using DesignPatterns.Patterns.Factory;
-using DesignPatterns.Patterns.Singleton;
-using DesignPatterns.Patterns.Singleton.Interfaces;
+﻿using DesignPatterns.Extensions;
+using DesignPatterns.Services;
 using DesignPatterns.Shared.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,7 +7,7 @@ var services = new ServiceCollection();
 services.AddProjectDependencies();
 
 var serviceProvider = services.BuildServiceProvider();
-var executor = serviceProvider.GetRequiredService<IDatabaseExecutorService>();
+var patternExecutorService = serviceProvider.GetRequiredService<PatternExecutorService>();
 
 int patternChoice = -1;
 
@@ -27,47 +23,17 @@ while (patternChoice != 9)
 
     if (int.TryParse(Console.ReadLine(), out patternChoice))
     {
-        switch (patternChoice)
+        if (patternChoice == 9)
         {
-            case 1:
-                Console.Clear();
-                Console.WriteLine("ABSTRACT FACTORY METHOD.");
-                Console.WriteLine();
-                AbstractFactoryExecutor.Run();
-                break;
-
-            case 2:
-                Console.Clear();
-                Console.WriteLine("BUILDER METHOD.");
-                Console.WriteLine();
-                BuilderMethodExecutor.Run();
-                break;
-
-            case 3:
-                Console.Clear();
-                Console.WriteLine("FACTORY METHOD.");
-                Console.WriteLine();
-                FactoryMethodExecutor.Run();
-                break;
-
-            case 4:
-                Console.Clear();
-                Console.WriteLine("SINGLETON METHOD.");
-                Console.WriteLine();
-                SingletonMethodExecutor.Run(executor);
-                break;
-
-            case 9:
-                Console.WriteLine();
-                Console.WriteLine("Quiting...");
-                Console.WriteLine();
-                return;
-
-            default:
-                Console.Clear();
-                SharedPrintHelpers.InvalidOption();
-                break;
+            Console.WriteLine();
+            Console.WriteLine("Quitting...");
+            Console.WriteLine();
+            return;
         }
+
+        Console.Clear();
+
+        patternExecutorService.ExecutePattern(patternChoice);
     }
     else
     {

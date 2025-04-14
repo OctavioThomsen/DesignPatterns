@@ -1,17 +1,21 @@
 ﻿using DesignPatterns.Patterns.AbstractFactory.Helpers;
 using DesignPatterns.Patterns.AbstractFactory.Services;
 using DesignPatterns.Shared.Helpers;
+using DesignPatterns.Shared.Interfaces;
 
 namespace DesignPatterns.AbstractFactory
 {
-    internal static class AbstractFactoryExecutor
+    internal class AbstractFactoryExecutor : IPatternExecutor
     {
-        internal static void Run()
+        public void Execute()
         {
             int modelChoice = -1;
 
+            AbstractFactoryPrintsHelper.PatternDesignTittle();
+
             while (modelChoice != 9)
             {
+                
                 AbstractFactoryPrintsHelper.ModelSelector();
 
                 if (int.TryParse(Console.ReadLine(), out modelChoice))
@@ -28,6 +32,8 @@ namespace DesignPatterns.AbstractFactory
                 {
                     SharedPrintHelpers.InvalidOption();
                 }
+
+                Console.WriteLine();
             }
         }
     }

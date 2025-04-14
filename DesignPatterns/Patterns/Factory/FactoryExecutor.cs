@@ -1,14 +1,17 @@
 ﻿using DesignPatterns.Patterns.Factory.Helpers;
 using DesignPatterns.Patterns.Factory.Services;
 using DesignPatterns.Shared.Helpers;
+using DesignPatterns.Shared.Interfaces;
 
 namespace DesignPatterns.Patterns.Factory
 {
-    internal static class FactoryMethodExecutor
+    internal class FactoryExecutor : IPatternExecutor
     {
-        internal static void Run()
+        public void Execute()
         {
             int choice = -1;
+
+            FactoryPrintsHelper.PatternDesignTittle();
 
             while (choice != 9)
             {
@@ -23,8 +26,6 @@ namespace DesignPatterns.Patterns.Factory
                     SharedPrintHelpers.InvalidOption();
                 }
             }
-
-            Console.Clear();
         }
     }
 }
