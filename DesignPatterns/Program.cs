@@ -1,21 +1,17 @@
 ﻿using DesignPatterns.AbstractFactory;
-using DesignPatterns.Builder;
-using DesignPatterns.Factory;
+using DesignPatterns.Extensions;
+using DesignPatterns.Patterns.Builder;
+using DesignPatterns.Patterns.Factory;
+using DesignPatterns.Patterns.Singleton;
+using DesignPatterns.Patterns.Singleton.Interfaces;
 using DesignPatterns.Shared.Helpers;
-using DesignPatterns.Singleton;
-using DesignPatterns.Singleton.Interfaces;
-using DesignPatterns.Singleton.Services;
-using DesignPatterns.Singleton.Singleton;
 using Microsoft.Extensions.DependencyInjection;
 
-Console.WriteLine("Starting dependency inyection:");
 var services = new ServiceCollection();
-services.AddSingleton<IDatabase, Database>(provider => Database.GetInstance());
-services.AddTransient<IDatabaseExecutorService, DatabaseExecutorService>();
+services.AddProjectDependencies();
+
 var serviceProvider = services.BuildServiceProvider();
 var executor = serviceProvider.GetRequiredService<IDatabaseExecutorService>();
-Console.WriteLine("Ending dependency inyection.");
-Console.WriteLine();
 
 int patternChoice = -1;
 
@@ -37,7 +33,7 @@ while (patternChoice != 9)
                 Console.Clear();
                 Console.WriteLine("ABSTRACT FACTORY METHOD.");
                 Console.WriteLine();
-                AbstractFactoryMethodExecutor.Run();
+                AbstractFactoryExecutor.Run();
                 break;
 
             case 2:
