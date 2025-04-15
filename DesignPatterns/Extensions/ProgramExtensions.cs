@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Interfaces;
 using DesignPatterns.Patterns.Builder;
 using DesignPatterns.Patterns.Factory;
 using DesignPatterns.Patterns.Singleton;
@@ -24,7 +25,8 @@ namespace DesignPatterns.Extensions
             services.AddTransient<IPatternExecutor, FactoryExecutor>();
             services.AddTransient<IPatternExecutor, SingletonExecutor>();
 
-            services.AddTransient<PatternExecutorService>();
+            services.AddTransient<IPatternExecutorService, PatternExecutorService>();
+            services.AddTransient<IConsoleAppService, ConsoleAppService>();
 
             return services;
         }
