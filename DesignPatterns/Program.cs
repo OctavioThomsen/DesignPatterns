@@ -40,4 +40,6 @@ while (patternChoice != 9)
         Console.Clear();
         SharedPrintHelpers.InvalidOption();
     }
+
+    Console.Clear();
 }

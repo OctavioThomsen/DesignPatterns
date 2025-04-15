@@ -19,10 +19,10 @@ namespace DesignPatterns.Extensions
 
             services.AddTransient<IDatabaseExecutorService, DatabaseExecutorService>();
 
-            services.AddTransient<AbstractFactoryExecutor>();
-            services.AddTransient<BuilderExecutor>();
-            services.AddTransient<FactoryExecutor>();
-            services.AddTransient<SingletonExecutor>();
+            services.AddTransient<IPatternExecutor, AbstractFactoryExecutor>();
+            services.AddTransient<IPatternExecutor, BuilderExecutor>();
+            services.AddTransient<IPatternExecutor, FactoryExecutor>();
+            services.AddTransient<IPatternExecutor, SingletonExecutor>();
 
             services.AddTransient<PatternExecutorService>();
 

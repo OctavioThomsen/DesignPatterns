@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Patterns.Builder.Helpers;
 using DesignPatterns.Patterns.Builder.Services;
+using DesignPatterns.Shared.Enums;
 using DesignPatterns.Shared.Helpers;
 using DesignPatterns.Shared.Interfaces;
 
@@ -7,6 +8,8 @@ namespace DesignPatterns.Patterns.Builder
 {
     internal class BuilderExecutor : IPatternExecutor
     {
+        public PatternType PatternType => PatternType.Builder;
+
         public void Execute()
         {
             int directorChoice = -1;

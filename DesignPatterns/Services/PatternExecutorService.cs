@@ -1,47 +1,31 @@
-﻿using DesignPatterns.AbstractFactory;
-using DesignPatterns.Patterns.Builder;
-using DesignPatterns.Patterns.Factory;
-using DesignPatterns.Patterns.Singleton;
+﻿using DesignPatterns.Shared.Enums;
 using DesignPatterns.Shared.Helpers;
 using DesignPatterns.Shared.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Services
 {
     internal class PatternExecutorService
     {
-        private readonly IServiceProvider _serviceProvider;
+        private readonly IEnumerable<IPatternExecutor> _executors;
 
-        public PatternExecutorService(IServiceProvider serviceProvider)
+        public PatternExecutorService(IEnumerable<IPatternExecutor> executors)
         {
-            _serviceProvider = serviceProvider;
+            _executors = executors;
         }
 
         public void ExecutePattern(int patternChoice)
         {
-            IPatternExecutor? patternExecutor = patternChoice switch
-            {
-                1 => _serviceProvider.GetRequiredService<AbstractFactoryExecutor>(),
-                2 => _serviceProvider.GetRequiredService<BuilderExecutor>(),
-                3 => _serviceProvider.GetRequiredService<FactoryExecutor>(),
-                4 => _serviceProvider.GetRequiredService<SingletonExecutor>(),
-                _ => ReturnNullWithMessage()
-            };
+            var patternType = (PatternType)patternChoice;
 
-            if (patternExecutor is null)
+            IPatternExecutor? executor = _executors.FirstOrDefault(e => e.PatternType == patternType);
+
+            if (executor is null)
             {
+                SharedPrintHelpers.InvalidOption();
                 return;
             }
 
-            patternExecutor.Execute();
-
-            Console.Clear();
-        }
-
-        private static IPatternExecutor? ReturnNullWithMessage()
-        {
-            SharedPrintHelpers.InvalidOption();
-            return null;
+            executor.Execute();
         }
     }
 }

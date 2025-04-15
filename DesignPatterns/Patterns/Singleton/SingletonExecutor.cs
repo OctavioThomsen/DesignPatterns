@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Patterns.Singleton.Helpers;
 using DesignPatterns.Patterns.Singleton.Interfaces;
+using DesignPatterns.Shared.Enums;
 using DesignPatterns.Shared.Helpers;
 using DesignPatterns.Shared.Interfaces;
 
@@ -7,6 +8,7 @@ namespace DesignPatterns.Patterns.Singleton
 {
     internal class SingletonExecutor : IPatternExecutor
     {
+        public PatternType PatternType => PatternType.Singleton;
         private readonly IDatabaseExecutorService databaseExecutorService;
 
         public SingletonExecutor(IDatabaseExecutorService databaseExecutorService)
