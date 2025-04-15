@@ -1,4 +1,5 @@
-﻿using DesignPatterns.ConsoleApp.Interfaces;
+﻿using DesignPatterns.ConsoleApp.Helpers;
+using DesignPatterns.ConsoleApp.Interfaces;
 using DesignPatterns.PatternExecutor.Interfaces;
 using DesignPatterns.Shared.Helpers;
 
@@ -19,21 +20,13 @@ namespace DesignPatterns.ConsoleApp
 
             while (patternChoice != 9)
             {
-                Console.WriteLine("Select a design pattern:");
-                Console.WriteLine("1 - Abstract Factory Method");
-                Console.WriteLine("2 - Builder Method");
-                Console.WriteLine("3 - Factory Method");
-                Console.WriteLine("4 - Singleton Method");
-                Console.WriteLine("9 - Exit");
-                Console.WriteLine();
+                ConsoleAppPrintHelper.DesignPatternSelector();
 
                 if (int.TryParse(Console.ReadLine(), out patternChoice))
                 {
                     if (patternChoice == 9)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Quitting...");
-                        Console.WriteLine();
+                        ConsoleAppPrintHelper.Quitting();
                         return;
                     }
 
