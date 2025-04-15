@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Shared.Enums;
+﻿using DesignPatterns.PatternExecutor.Enums;
 
-namespace DesignPatterns.Shared.Interfaces
+namespace DesignPatterns.PatternExecutor.Interfaces
 {
     internal interface IPatternExecutor
     {

@@ -1,10 +1,10 @@
-﻿using DesignPatterns.Patterns.AbstractFactory.Helpers;
+﻿using DesignPatterns.PatternExecutor.Enums;
+using DesignPatterns.PatternExecutor.Interfaces;
+using DesignPatterns.Patterns.AbstractFactory.Helpers;
 using DesignPatterns.Patterns.AbstractFactory.Services;
-using DesignPatterns.Shared.Enums;
 using DesignPatterns.Shared.Helpers;
-using DesignPatterns.Shared.Interfaces;
 
-namespace DesignPatterns.AbstractFactory
+namespace DesignPatterns.PatternExecutor.Patterns
 {
     internal class AbstractFactoryExecutor : IPatternExecutor
     {
@@ -18,7 +18,7 @@ namespace DesignPatterns.AbstractFactory
 
             while (modelChoice != 9)
             {
-                
+
                 AbstractFactoryPrintsHelper.ModelSelector();
 
                 if (int.TryParse(Console.ReadLine(), out modelChoice))

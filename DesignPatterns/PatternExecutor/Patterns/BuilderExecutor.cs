@@ -1,10 +1,10 @@
-﻿using DesignPatterns.Patterns.Builder.Helpers;
+﻿using DesignPatterns.PatternExecutor.Enums;
+using DesignPatterns.PatternExecutor.Interfaces;
+using DesignPatterns.Patterns.Builder.Helpers;
 using DesignPatterns.Patterns.Builder.Services;
-using DesignPatterns.Shared.Enums;
 using DesignPatterns.Shared.Helpers;
-using DesignPatterns.Shared.Interfaces;
 
-namespace DesignPatterns.Patterns.Builder
+namespace DesignPatterns.PatternExecutor.Patterns
 {
     internal class BuilderExecutor : IPatternExecutor
     {

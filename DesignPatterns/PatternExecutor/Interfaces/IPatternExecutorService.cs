@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Interfaces
+﻿namespace DesignPatterns.PatternExecutor.Interfaces
 {
     internal interface IPatternExecutorService
     {

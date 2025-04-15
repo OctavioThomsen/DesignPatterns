@@ -1,7 +1,8 @@
-﻿using DesignPatterns.Interfaces;
+﻿using DesignPatterns.ConsoleApp.Interfaces;
+using DesignPatterns.PatternExecutor.Interfaces;
 using DesignPatterns.Shared.Helpers;
 
-namespace DesignPatterns.Services
+namespace DesignPatterns.ConsoleApp
 {
     internal class ConsoleAppService : IConsoleAppService
     {

@@ -1,9 +1,8 @@
-﻿using DesignPatterns.Interfaces;
-using DesignPatterns.Shared.Enums;
+﻿using DesignPatterns.PatternExecutor.Enums;
+using DesignPatterns.PatternExecutor.Interfaces;
 using DesignPatterns.Shared.Helpers;
-using DesignPatterns.Shared.Interfaces;
 
-namespace DesignPatterns.Services
+namespace DesignPatterns.PatternExecutor
 {
     internal class PatternExecutorService : IPatternExecutorService
     {

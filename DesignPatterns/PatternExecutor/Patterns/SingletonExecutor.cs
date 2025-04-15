@@ -1,10 +1,10 @@
-﻿using DesignPatterns.Patterns.Singleton.Helpers;
+﻿using DesignPatterns.PatternExecutor.Enums;
+using DesignPatterns.PatternExecutor.Interfaces;
+using DesignPatterns.Patterns.Singleton.Helpers;
 using DesignPatterns.Patterns.Singleton.Interfaces;
-using DesignPatterns.Shared.Enums;
 using DesignPatterns.Shared.Helpers;
-using DesignPatterns.Shared.Interfaces;
 
-namespace DesignPatterns.Patterns.Singleton
+namespace DesignPatterns.PatternExecutor.Patterns
 {
     internal class SingletonExecutor : IPatternExecutor
     {

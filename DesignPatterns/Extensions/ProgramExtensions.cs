@@ -1,13 +1,12 @@
-﻿using DesignPatterns.AbstractFactory;
-using DesignPatterns.Interfaces;
-using DesignPatterns.Patterns.Builder;
+﻿using DesignPatterns.ConsoleApp;
+using DesignPatterns.ConsoleApp.Interfaces;
+using DesignPatterns.PatternExecutor;
+using DesignPatterns.PatternExecutor.Interfaces;
+using DesignPatterns.PatternExecutor.Patterns;
 using DesignPatterns.Patterns.Factory;
-using DesignPatterns.Patterns.Singleton;
 using DesignPatterns.Patterns.Singleton.Interfaces;
 using DesignPatterns.Patterns.Singleton.Services;
 using DesignPatterns.Patterns.Singleton.Singleton;
-using DesignPatterns.Services;
-using DesignPatterns.Shared.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Extensions

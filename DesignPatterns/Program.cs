@@ -1,5 +1,5 @@
-﻿using DesignPatterns.Extensions;
-using DesignPatterns.Interfaces;
+﻿using DesignPatterns.ConsoleApp.Interfaces;
+using DesignPatterns.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();

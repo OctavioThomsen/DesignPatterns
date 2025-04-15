@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Interfaces
+﻿namespace DesignPatterns.ConsoleApp.Interfaces
 {
     internal interface IConsoleAppService
     {

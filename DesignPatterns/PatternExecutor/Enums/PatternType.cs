@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Shared.Enums
+﻿namespace DesignPatterns.PatternExecutor.Enums
 {
     internal enum PatternType
     {
