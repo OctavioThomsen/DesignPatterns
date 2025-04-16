@@ -72,3 +72,7 @@ Best Practices Applied
 - Modular organization per pattern
 - Console logic fully decoupled from pattern implementations
 - Scalable architecture (easy to add new patterns)
+
+Future Improvements
+- Add unit testing
+- Add more design patterns
