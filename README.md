@@ -20,13 +20,12 @@ Each pattern is implemented independently, following its core logic and design i
 
 The solution is organized by responsibility, following clean architecture and best practices:
 
-/ConsoleApp → Main logic of the console app (entry from Program.cs) 
-/Extensions → Service configuration (DI) and extension methods 
-/PatternExecutor → Responsible for invoking the selected pattern (generic service) 
-/Patterns → Individual implementations for each pattern 
-/Shared → Shared helpers and utilities 
-Program.cs → Entry point, delegates control to the ConsoleApp layer
-
+- /ConsoleApp → Main logic of the console app (entry from Program.cs) 
+- /Extensions → Service configuration (DI) and extension methods 
+- /PatternExecutor → Responsible for invoking the selected pattern (generic service) 
+- /Patterns → Individual implementations for each pattern 
+- /Shared → Shared helpers and utilities 
+- Program.cs → Entry point, delegates control to the ConsoleApp layer
 
 ---
 
